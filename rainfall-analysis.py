@@ -5,18 +5,11 @@ import statsmodels.api as sm
 from statsmodels.graphics.tsaplots import acf,pacf,plot_acf,plot_pacf
 from statsmodels.tsa.arima_model import ARMA
 from sklearn.metrics import mean_squared_error
+from rainfall_fill import *
 
 
-#import csv converet timestamp to date time
-data = pd.read_csv('accumRainfall.csv', encoding = 'utf-16', sep = '\t')
-data['parsed_date'] = pd.to_datetime(data['unixdatetime'], unit = 's')
-
-date_idx = pd.date_range(data['parsed_date'][0], data['parsed_date'].iloc[-1])
-data = data.set_index('parsed_date')
-data.drop(labels = ['unixdatetime'], axis = 1, inplace = True)
-
-time_ser = data.reindex(date_idx).interpolate()
-
+time_ser = data_process("accumRainfall.csv")
+#print(time_ser)
 
 #plot the time series
 plt.figure(figsize=(15,5))

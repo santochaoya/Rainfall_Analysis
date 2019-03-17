@@ -1,5 +1,5 @@
 import pyodbc
-import pandas as pd
+
 
 conn = pyodbc.connect("Driver={SQL Server Native Client 11.0};"
                         "Server=server_name;"
