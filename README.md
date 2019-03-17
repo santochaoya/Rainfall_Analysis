@@ -1,1 +1,23 @@
-# Rainfall_Analysis
+# Rainfall Analysis
+
+
+## About
+This is a rainfall analysis based on time series model.
+
+* `rainfall_fill.py` : some assumptions of fill the missing values of hourly
+* `rainfall_analysis.py` : fit the data to a time series model
+* `sql_ser.py` : connect to SQL Server to import new data
+
+&nbsp;
+
+## Procedure
+### 1.Fill the missing values
+
+Atfer extract timestamp by units of second, the intervals shows on different days. </br>
+
+`assumption` : values through increment hours interval.
+
+* missing value of days : 0.001, a small non-zero value;
+* missing value of hours : 
+
+&nbsp;

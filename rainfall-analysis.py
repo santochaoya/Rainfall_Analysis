@@ -8,7 +8,15 @@ from sklearn.metrics import mean_squared_error
 from rainfall_fill import *
 
 
-time_ser = data_process("accumRainfall.csv")
+data = pd.read_csv('accumRainfall.csv', encoding='utf-16', sep='\t')
+data['parsed_date'] = pd.to_datetime(data['unixdatetime'], unit='s')
+
+date_idx = pd.date_range(data['parsed_date'][0], data['parsed_date'].iloc[-1])
+data = data.set_index('parsed_date')
+data.drop(labels=['unixdatetime'], axis=1, inplace=True)
+time_ser = data.reindex(date_idx).interpolate()
+
+
 #print(time_ser)
 
 #plot the time series

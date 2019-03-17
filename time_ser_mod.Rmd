@@ -1,5 +1,0 @@
-```{r}
-data("AirPassengers")
-class(AirPassengers)
-```
-
