@@ -11,7 +11,7 @@ This is a rainfall analysis based on time series model.
 &nbsp;
 
 ## Procedure
-### 1.Fill the missing values
+### 1. Fill the missing values
 
 Atfer extract timestamp by units of second, the intervals shows on different days. </br>
 
@@ -21,3 +21,11 @@ Atfer extract timestamp by units of second, the intervals shows on different day
 * missing value of hours : 
 
 &nbsp;
+`mean` : mean of each month  
+`w1` : rainfall ratio of every day  
+`w2` : rainfall ratio of every hour
+
+### 2. Fit the Time series : ARIMA Model
+improt the csv data to fit the ARIMA Model
+
+
