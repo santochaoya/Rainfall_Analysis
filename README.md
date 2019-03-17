@@ -2,7 +2,7 @@
 
 
 ## About
-This is a rainfall analysis based on time series model.
+This is a rainfall analysis based on time series model, from observations of each day(extract unixdatetime in 's')
 
 * `rainfall_fill.py` : some assumptions of fill the missing values of hourly
 * `rainfall_analysis.py` : fit the data to a time series model
@@ -59,7 +59,8 @@ Shown on the picture, the parameters might be 2 and 1.
     There is a small dataset for testing which has been commented.
     
 
-working on parts...
+working on trying...
+extract unixdatetime in 'ms', sensor clear to 0 from some moment, to figure out more tasks
 
 
 
