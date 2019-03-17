@@ -11,7 +11,7 @@ import rainfall_fill as rf
 
 data = ss.load_SQL()
 time_ser = rf.data_process(data)
-#print(time_ser)
+print(time_ser)
 
 #testing use small database
 '''data = pd.read_csv('accumRainfall.csv', encoding='utf-16', sep='\t')
