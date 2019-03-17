@@ -18,6 +18,8 @@ Atfer extract timestamp by units of second, the intervals shows on different day
 `assumption` : values through increment hours interval.
 
 * missing value of days : 0.001, a small non-zero value;
-* missing value of hours : 
+* missing value of hours :
+$$/Delta$$
+
 
 &nbsp;
