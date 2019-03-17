@@ -2,18 +2,11 @@ import pandas as pd
 import numpy as np
 
 
-def read_file(file_name):
-    '''read a file from sql server, convert timestamp to date time'''
-
-    data = pd.read_csv('accumRainfall.csv', encoding='utf-16', sep='\t')
-    data['parsed_date'] = pd.to_datetime(data['unixdatetime'], unit='s')
-
-    return data
-
-
 def extend_df(data):
     '''extend given date time into hourly, return a df with hourly missing value'''
 
+    # convert timestamp to date time
+    data['parsed_date'] = pd.to_datetime(data['unixdatetime'], unit='s')
     # extend month df into days: index with missing dates and value with a very small non-zero value
     date_idx = pd.date_range(data['parsed_date'][0], data['parsed_date'].iloc[-1])
     data = data.set_index('parsed_date')
@@ -69,10 +62,7 @@ def process_val(matrix, fill_data, month_name):
     return matrix_fill
 
 
-def data_process(file):
-    #read a file
-    data = read_file(file)
-    #print("========================\nreading data : \n========================\n{}\n".format(data))
+def data_process(data):
 
     #extend data frame
     fill_data, full_data = extend_df(data)
