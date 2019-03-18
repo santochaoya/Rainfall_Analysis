@@ -6,7 +6,6 @@ data['parsed_date'] = pd.to_datetime(data['unixdatetime'], unit = 'ms')
 
 date_idx = pd.date_range(data['parsed_date'][0], data['parsed_date'].iloc[-1])
 data = data.set_index('parsed_date')
-data.drop(labels = ['unixdatetime'], axis = 1, inplace = True)
 
 
 interval = []
@@ -21,8 +20,9 @@ for i in range(data.shape[0] - 1):
 interval.append('NaN')
 inter_val.append('NaN')
 
-data['interval'] = interval
-data['inter_val'] = inter_val
+data['interval'] = data['unixdatetime'].diff()
 
 print(data)
+
+
 
